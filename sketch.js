@@ -1,3 +1,10 @@
+// make a recorder object that can do everything
+// recorder: boolean to show status
+// record: array to store values..
+// current: setter to push object into record array
+// empty: function to empty the record array
+// ... more to add
+
 const recorder = {
   recording: true,
   record: [],
@@ -9,9 +16,6 @@ const recorder = {
       mouseY: mouseY,
     });
   },
-  // get empty() {
-  //   this.record.length = 0;
-  // },
   empty: function () {
     this.record.length = 0;
   },
@@ -59,24 +63,3 @@ function mouseClicked() {
   console.log("click");
   drawRecord(recorder.record);
 }
-
-// todo
-/*
-
-Make a recording object that contains everything we need.
-eg
-
-const recording = {
-  recording: true,
-  record: []
-  ser current({ frameCount, milliseconds, mouseX, mouseY }) {
-    record.push({
-      frameCount: frameCount,
-      milliseconds: milliseconds,
-      mouseX: mouseX,
-      mouseY: mouseY,
-    });
-  },
-}
-
-*/
