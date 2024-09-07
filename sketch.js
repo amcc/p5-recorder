@@ -31,28 +31,31 @@ const recorder = {
 };
 
 function setup() {
-  defaultCanvas = createCanvas(500, 500);
+  defaultCanvas = createCanvas(993, 702);
   pixelDensity(1);
+  background(0);
 }
 
 function draw() {
   // record actions
-  if (recorder.recording) {
-    background(0);
-
-    fill(255);
+  if (recorder.recording && mouseIsPressed) {
+    fill("hotpink");
     circle(mouseX, mouseY, mouseY);
 
     // record the current frame, there is an optional settings object we can use
     // recorder.current()
-    recorder.current({ fill: "blue" });
+    recorder.current({ fill: "hotpink" });
+  } else {
+    background(0);
+    fill("white");
+    circle(mouseX, mouseY, mouseY);
   }
 }
 
 function mouseClicked() {
   if (recorder.recording) {
     stopRecording();
-    outPutImage(2000, 2000);
+    outPutImage(9930, 7020);
   } else {
     startRecording();
   }
